@@ -6,6 +6,7 @@ There is no GUI interface. Configuration is done through JSON configuration. Ope
 To use, go to Resources > Library in the Google Sheets script editor and enter the following project key: 
 MlDapdgHJFiRpWKQOyZG0lIoHEfXZl5VD
 
+Then enter the following text.
 ```javascript
 spreadsheetsJson = []
 
@@ -15,3 +16,5 @@ function track() {
 ```
 
 Then create a trigger to run the track() function repeatedly, as often as required.
+
+Examples for spreadsheetJson coming...
