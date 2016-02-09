@@ -12,4 +12,4 @@ function track() {
   TrackData.runDiffCheck(spreadsheetsJSON, false)
 }
 
-Then create a trigger to run the track() function in over a certain time interval.
+Then create a trigger to run the track() function repeatedly, as often as required.
