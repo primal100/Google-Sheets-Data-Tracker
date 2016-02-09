@@ -594,8 +594,8 @@ function filterRow(jsonConfig, row){
   }
   sheet.setActiveRange(row.getRange());
 }
-function showAll(jsonConig){
-  var sheet = getDiffSheet(spreadsheet);
+function showAll(jsonConfig){
+  var sheet = getDiffSheet(jsonConfig);
   sheet.showColumns(1, sheet.getLastColumn());
   sheet.showRows(1, sheet.getLastRow());
 }
