@@ -2,7 +2,7 @@ var queryString = Math.random();
   
 function applyStripReplacesToArray(stringArray, stripReplaces){
   var newStringArray = [];
-    for ( var i in stringArray){  
+    for ( var i in stringArray){  a
        stringArray[i] = applyStripReplaces(stringArray[i], stripReplaces)   
     }
   return stringArray;
@@ -37,7 +37,7 @@ function DataTracker(config){
   this.historyHeaders = config.strings.history_headers || ['Date', 'Name', 'Value'];
   this.subject = (config.strings.subject || '%name% data has changed').replace('%name%', this.name);
   this.removedTextString = (config.strings.removed_text || "No Longer Found").replace('%name%', this.name);
-  this.archiveTime = (config.archiveTime || 0) * 60000;
+  this.archiveTime = (config.archive_time || 0) * 60000;
   this.mailto = config.mailto || false;
   this.firstRun = config.first_run || config.first_run==undefined || false;
   this.defaultFormatting = config.default_formatting || config.default_formatting==undefined || false;
