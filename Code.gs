@@ -1,48 +1,4 @@
 var queryString = Math.random();
-var pp_sources = [];
-var beforeUrl = '=IMPORTHTML("http://www.paddypower.com/bet/sports-novelties/wwe'
-var beforeUrl = '=IMPORTHTML("http://www.paddypower.com/bet/sports-novelties/wwe';
-var afterUrl = '", "table", "'
-var urls = ['', '?ev_oc_grp_ids=662687', '?ev_oc_grp_ids=1164955', '?ev_oc_grp_ids=663660', '?ev_oc_grp_ids=682383']
-var tables = [[5],[6],[6],[6],[6]];
-var names =  ['TLC World Title', 'WrestleMania World Title', 'Royal Rumble', 'TLC Intercontinental', 'TLC Tag-Team Titles'];
-var append = false;
-for ( var i in urls){
-  for (var j in tables[i]){
-  var source = {
-    formula: beforeUrl + urls[i] + afterUrl + tables[i][j] + '")',
-    name: names[i],
-    append: append,
-    space_before: 1,
-    
-  }
-  pp_sources.push(source);
-    append = true;
-  }
-}
-
-var spreadsheetsJSON = [
-  
-  {
-    name: 'Paddy Power', 
-    strings: {
-      diff_sheet_B1_header: 'Current Odds',
-    },
-    first_run: true,
-    value_strip_replaces: [[true, '\n', 1]],
-    exclude_if_any_header_empty: true,
-    name_sources:[
-      {
-        method: 4,
-      },      
-      {
-        method: 3,
-        strip_replaces: [[true, '\n', 0]]
-      }
-   ],
-   sources: pp_sources,
-  }  
-];
   
 function applyStripReplacesToArray(stringArray, stripReplaces){
   var newStringArray = [];
