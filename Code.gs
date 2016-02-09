@@ -29,7 +29,7 @@ function DataTracker(config){
   this.sources = config.sources;
   this.spreadsheet_id = config.id || false;
   config.strings = config.strings || {};
-  this.dataSheetName = (config.data_sheet_name || '%name% Data').replace('%name%', this.name);
+  this.dataSheetName = (config.strings.data_sheet_name || '%name% Data').replace('%name%', this.name);
   this.diffSheetName = (config.strings.diff_sheet_name || '%name% changes').replace('%name%', this.name);
   this.a1Title = (config.strings.diff_sheet_A1_header || '%name%').replace('%name%', this.name);
   this.b1Title = (config.strings.diff_sheet_B1_header || 'Current Values').replace('%name%', this.name);
