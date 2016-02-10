@@ -26,7 +26,7 @@ In addition to the value a cell contains, each cell will be allocated a name. Th
 1.  Cells will be compared with whatever cell had the same name the last time the script was run; therefore even if the cells containing certain values have changed position, in the data source they can still be compared correctly.  
 2.  The cell name will be entered in column A of the difference sheet and column B of the history sheet, so it easy to see what the rows refer to.
 
-Cell names are generated according to the following logic:
+Cell names are generated according to the following logic:  
 1.	Each spreadsheet JSON object contains an array of name sources.  
 2.	Each name source method generates a separate name. Method 0 just gives the name of the cell in A1 notation. This means a direct cell-by-cell comparison will occur. Method 1 and Method 2 can be used to get the name from a header. Method 3 can be used to get the name from a cell offset from the one being checked. Method 4 is a name associated to the source with the name paramater. Method 5 gets a name from the column header associated to the source. Method  6 gets a name from the row header associated to the source.  
 3.	An array of javascript strip and replace commands will be run on each name source if the strip_replaces parameter is configured for that name source.  
