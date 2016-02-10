@@ -99,8 +99,8 @@ row -  Mandatory. The number for the row containing the list of changes for the 
 TrackData.showAll(jsonConfig)
 ```
 Show all columns in a spreadsheet (undo filterRow method).
-jsonConfig – Mandatory. The JSON configuration for a single spreadsheet object, e.g. spreadsheetsJSON[0].
 
+jsonConfig – Mandatory. The JSON configuration for a single spreadsheet object, e.g. spreadsheetsJSON[0].
 
 JSON Spreadsheet Configuration Tables
 -------------
