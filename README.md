@@ -19,7 +19,9 @@ Then create a trigger to run the track() function repeatedly, as often as requir
 
 ##How Gspread-Data-Tracker works##
 
-The input into the tracker is json, which configures which data to track and how to look for patterns in that data so that the correct cells are compared even if the format change.
+The input into the tracker is json, which configures which data to track, how to look for patterns in that data so that the correct cells are compared even if the format changes, and how to label the cells.
+
+The output is a "difference sheet" which tracks how data changes over time and a "history sheet" which lists all changes in chronological order.
 
 ##Understanding Cell Names##
 In addition to the value a cell contains, each cell will be allocated a name. This has two purposes:  
