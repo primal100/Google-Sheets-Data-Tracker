@@ -6,7 +6,7 @@ There is no GUI interface. Configuration is done through JSON configuration. Ope
 To use, go to Resources > Library in the Google Sheets script editor and enter the following project key: 
 MlDapdgHJFiRpWKQOyZG0lIoHEfXZl5VD
 
-Then enter the following text.
+Then enter the following text in your script:
 ```javascript
 spreadsheetsJson = []
 
@@ -19,15 +19,15 @@ Then create a trigger to run the track() function repeatedly, as often as requir
 
 Examples for spreadsheetJson coming...
 
-Understanding Cell Names
+##Understanding Cell Names##
 In addition to the value a cell contains, each cell will be allocated a name. This has two purposes:
-1)	Cells will be compared with whatever cell had the same name the last time the script was run; therefore even if the cells containing certain values have changed position, in the data source they can still be compared correctly.
-2)	The cell name will be entered in column A of the difference sheet and column B of the history sheet, so it easy to see what the rows refer to.
+1.  Cells will be compared with whatever cell had the same name the last time the script was run; therefore even if the cells containing certain values have changed position, in the data source they can still be compared correctly.
+2.  The cell name will be entered in column A of the difference sheet and column B of the history sheet, so it easy to see what the rows refer to.
 
 Cell names are generated according to the following logic:
-1)	Each spreadsheet JSON object contains an array of name sources.
-2)	Each name source method generates a separate name. Method 0 just gives the name of the cell in A1 notation. This means a direct cell-by-cell comparison will occur. Method 1 and Method 2 can be used to get the name from a header. Method 3 can be used to get the name from a cell offset from the one being checked. Method 4 is a name associated to the source with the name paramater. Method 5 gets a name from the column header associated to the source. Method  6 gets a name from the row header associated to the source.
-3)	An array of javascript strip and replace commands will be run on each name source if the strip_replaces parameter is configured for that name source.
+1.	Each spreadsheet JSON object contains an array of name sources.
+2.	Each name source method generates a separate name. Method 0 just gives the name of the cell in A1 notation. This means a direct cell-by-cell comparison will occur. Method 1 and Method 2 can be used to get the name from a header. Method 3 can be used to get the name from a cell offset from the one being checked. Method 4 is a name associated to the source with the name paramater. Method 5 gets a name from the column header associated to the source. Method  6 gets a name from the row header associated to the source.
+3.	An array of javascript strip and replace commands will be run on each name source if the strip_replaces parameter is configured for that name source.
 4)	Multiple name sources can be combined. For example, if method 1 and method 2 are used together, the row header and column header will be combined to make the name with a space in between.  Method 0 should not be combined with other methods.
 5)	Ideally, whatever names which are returned should be unique. If they aren’t then a number will be appended to repeat occurrences of names.
 6)	The script will return an empty string for a name if the cell is to be excluded from being monitored (for example if it appears in the exclude_column list, or is outside the selected range parameter value).
