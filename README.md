@@ -6,7 +6,7 @@ There is no GUI interface. Configuration is done through JSON configuration. Ope
 To use, go to Resources > Library in the Google Sheets script editor and enter the following project key: 
 MlDapdgHJFiRpWKQOyZG0lIoHEfXZl5VD
 
-Then enter the following text in your script:
+Then enter the following javascript code in your script:
 ```javascript
 spreadsheetsJson = []
 
@@ -16,6 +16,9 @@ function track() {
 ```
 
 Then create a trigger to run the track() function repeatedly, as often as required.
+
+##How Gspread-Data-Tracker works##
+
 
 Examples for spreadsheetJson coming...
 
@@ -47,7 +50,11 @@ Methods
 TrackData.runDiffCheck(jsonConfig, dataSheetOnly)
 ```
 Run the data comparison. 
+
+Arguments:
+
 jsonConfig – Mandatory. The JSON configuration which should contain an array of Spreadsheet objects.
+
 dataSheetOnly – Optional. If set to true, only the data sheet containing the data sources will be created and then the script will stop. This is useful for early setup to check what the data source table looks like. Default is false.
 
 ```javascript
@@ -55,21 +62,37 @@ TrackData.getHistorySheet(jsonConfig)
 ```
 Returns the spreadsheet containing a history of all changes to the data.
 
+Arguments:
+
+jsonConfig – Mandatory. The JSON configuration for a single spreadsheet object, e.g. spreadsheetsJSON[0].
+
 ```javascript
 TrackData.getDiffSheet(jsonConfig)
 ```
 Returns the spreadsheet containing the changes to data over time.
+
+Arguments:
+
+jsonConfig – Mandatory. The JSON configuration for a single spreadsheet object, e.g. spreadsheetsJSON[0].
 
 ```javascript
 TrackData.getDataSheet(jsonConfig)
 ```
 Returns the spreadsheet containing the latest data.
 
+Arguments:
+
+jsonConfig – Mandatory. The JSON configuration for a single spreadsheet object, e.g. spreadsheetsJSON[0].
+
 ```javascript
 TrackData.filterRow(jsonConfig, row)
 ```
 Filter the difference sheet to only show columns for times where a cell’s value changed. 
+
+Arguments:
+
 jsonConfig – Mandatory. The JSON configuration for a single spreadsheet object, e.g. spreadsheetsJSON[0].
+
 row -  Mandatory. The number for the row containing the list of changes for the cell which is being filtered for.
 
 ```javascript
@@ -109,7 +132,7 @@ JSON Spreadsheet Configuration Tables
 |    first_run                      |    Bool                            |    true                                     |    After the script has been run once and  the configuration has been verified, this   parameter can be set to false to reduce the number of Spreadsheet API   requests, helping the script to fun faster. Leave as true during testing and   troubleshooting.                                                                                 |
 |    sort_diff_sheet                |    Bool                            |    false                                    |    If true; the difference sheet will be sorted by column A                                                                                                                                                                                                                                                                                    |
 |    sort_history_sheet             |    Bool                            |    false                                    |    If true; the history sheet will be sorted by column A                                                                                                                                                                                                                                                                                       |
-|    default_formatting             |    Bool                            |    true                                     |    If true, at the end the script will auto-resize all columns, headers   will be bolded and frozen, and sheets moved to appropriate positions; for   both the difference Sheet and the history Sheet                                                                                                                                          |
+|    default_formatting             |    Bool                            |    true                                     |    If true, at the end the script will auto-resize all columns, headers   will be bolded and frozen, and sheets moved to appropriate positions; for   both the difference Sheet and the history Sheet                                                                                                                                        | 
 
 ###Strings Object:###
 
@@ -149,6 +172,6 @@ JSON Spreadsheet Configuration Tables
 |    row_offset        |    Number                    |    For method 3, the row offset from the cell being checked                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |    0 (same row as the cell, if 0 is also used for col_offset, then the   same cell contains both name and value so use split_name_by and split_value_by   to separate them)    |
 
 Common Issues
-1.	“Range is invalid” – make sure firstrun is set to true.
+1. “Range is invalid” – make sure firstrun is set to true.
 
 
