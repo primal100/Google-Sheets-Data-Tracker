@@ -19,29 +19,29 @@ Then create a trigger to run the track() function repeatedly, as often as requir
 
 ##How Gspread-Data-Tracker works##
 
-
-Examples for spreadsheetJson coming...
+Coming...
 
 ##Understanding Cell Names##
-In addition to the value a cell contains, each cell will be allocated a name. This has two purposes:
-1.  Cells will be compared with whatever cell had the same name the last time the script was run; therefore even if the cells containing certain values have changed position, in the data source they can still be compared correctly.
+In addition to the value a cell contains, each cell will be allocated a name. This has two purposes:  
+1.  Cells will be compared with whatever cell had the same name the last time the script was run; therefore even if the cells containing certain values have changed position, in the data source they can still be compared correctly.  
 2.  The cell name will be entered in column A of the difference sheet and column B of the history sheet, so it easy to see what the rows refer to.
 
 Cell names are generated according to the following logic:
-1.	Each spreadsheet JSON object contains an array of name sources.
-2.	Each name source method generates a separate name. Method 0 just gives the name of the cell in A1 notation. This means a direct cell-by-cell comparison will occur. Method 1 and Method 2 can be used to get the name from a header. Method 3 can be used to get the name from a cell offset from the one being checked. Method 4 is a name associated to the source with the name paramater. Method 5 gets a name from the column header associated to the source. Method  6 gets a name from the row header associated to the source.
-3.	An array of javascript strip and replace commands will be run on each name source if the strip_replaces parameter is configured for that name source.
-4)	Multiple name sources can be combined. For example, if method 1 and method 2 are used together, the row header and column header will be combined to make the name with a space in between.  Method 0 should not be combined with other methods.
-5)	Ideally, whatever names which are returned should be unique. If they aren’t then a number will be appended to repeat occurrences of names.
-6)	The script will return an empty string for a name if the cell is to be excluded from being monitored (for example if it appears in the exclude_column list, or is outside the selected range parameter value).
-7)	An array of javascript strip and replace functions will be run on the entire name if the strip_replaces array parameter is set.
-8)	If the exclude_if_any_header_empty is set to true, then if any one name source method returns an empty string then the script will return an empty string for the entire name, thus it will no longer be monitored. This can prove useful for easily removing pointless cells for certain data sources from being monitored.
+1.	Each spreadsheet JSON object contains an array of name sources.  
+2.	Each name source method generates a separate name. Method 0 just gives the name of the cell in A1 notation. This means a direct cell-by-cell comparison will occur. Method 1 and Method 2 can be used to get the name from a header. Method 3 can be used to get the name from a cell offset from the one being checked. Method 4 is a name associated to the source with the name paramater. Method 5 gets a name from the column header associated to the source. Method  6 gets a name from the row header associated to the source.  
+3.	An array of javascript strip and replace commands will be run on each name source if the strip_replaces parameter is configured for that name source.  
+4)	Multiple name sources can be combined. For example, if method 1 and method 2 are used together, the row header and column header will be combined to make the name with a space in between.  Method 0 should not be combined with other methods.  
+5)	Ideally, whatever names which are returned should be unique. If they aren’t then a number will be appended to repeat occurrences of names.  
+6)	The script will return an empty string for a name if the cell is to be excluded from being monitored (for example if it appears in the exclude_column list, or is outside the selected range parameter value).  
+7)	An array of javascript strip and replace functions will be run on the entire name if the strip_replaces array parameter is set.  
+8)	If the exclude_if_any_header_empty is set to true, then if any one name source method returns an empty string then the script will return an empty string for the entire name, thus it will no longer be monitored. This can prove useful for easily removing pointless cells for certain data sources from being monitored.  
 Be careful that this never returns an empty string or the cell will not be monitored.
 
 The best way to understand this is via examples.
 
 Examples
 -------------
+Examples for spreadsheetJson coming...
 
 Methods
 -------------
@@ -165,7 +165,7 @@ JSON Spreadsheet Configuration Tables
 |    col_offset        |    Number                    |    For method 3, the column offset from the cell being checked                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |    0 (same column as the cell)                                                                                                                                                 |
 |    row_offset        |    Number                    |    For method 3, the row offset from the cell being checked                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |    0 (same row as the cell, if 0 is also used for col_offset, then the   same cell contains both name and value so use split_name_by and split_value_by   to separate them)    |
 
-Common Issues
+Common Issues  
 1. “Range is invalid” – make sure firstrun is set to true.
 
 
