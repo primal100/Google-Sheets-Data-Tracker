@@ -79,7 +79,7 @@ jsonConfig – Mandatory. The JSON configuration for a single spreadsheet object
 JSON Spreadsheet Configuration Tables
 -------------
 
-Spreadsheet Object:
+###Spreadsheet Object:###
 
 
 |    Attribute                      |    Type                            |    Default                                  |    Purpose                                                                                                                                                                                                                                                                                                                                     |
@@ -108,7 +108,7 @@ Spreadsheet Object:
 |    sort_history_sheet             |    Bool                            |    false                                    |    If true; the history sheet will be sorted by column A                                                                                                                                                                                                                                                                                       |
 |    default_formatting             |    Bool                            |    true                                     |    If true, at the end the script will auto-resize all columns, headers   will be bolded and frozen, and sheets moved to appropriate positions; for   both the difference Sheet and the history Sheet                                                                                                                                          |
 
-Strings Object:
+###Strings Object:###
 
 |    Attribute                |    Type                  |    Purpose                      |    Default                                                                                                                |
 |-----------------------------|--------------------------|---------------------------------|---------------------------------------------------------------------------------------------------------------------------|
@@ -120,7 +120,7 @@ Strings Object:
 |    history_headers          |    Array of 3 strings    |    ['Date', 'Name', 'Value']    |    Header strings entered in A1, B1 and C1 of the history sheet                                                           |
 |    removed_text             |    String                |    “No Longer Found”            |    Appears in a cell when a name belonging to a cell to be monitored can   no longer be found in the latest data sheet    |
 |    subject                  |    String                |    name + ‘ has changed’        |    The subject for when a mail is sent                                                                                    |
-Source Object:
+###Source Object:###
 
 |    Attribute           |    Type      |    Default                              |    Purpose                                                                                                                                                                                                                                                                                                                                                                                              |
 |------------------------|--------------|-----------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -135,7 +135,7 @@ Source Object:
 |    column_header       |    Number    |    1                                    |    If the name source method 5 is used, the column which contains   headers relative to the first column in the source’s data                                                                                                                                                                                                                                                                           |
 |    row_header          |    Number    |    1                                    |    If the name source method 6 is used, the row which contains headers   relative to the first row in the source’s data                                                                                                                                                                                                                                                                                 |
 
-Name Source Object:
+###Name Source Object:###
 
 |    Attribute         |    Type                      |    Purpose                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |    Default                                                                                                                                                                     |
 |----------------------|------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
