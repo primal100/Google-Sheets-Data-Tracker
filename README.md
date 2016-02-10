@@ -6,7 +6,7 @@ There is no GUI interface. Configuration is done through JSON configuration. Ope
 To use, go to Resources > Library in the Google Sheets script editor and enter the following project key: 
 MlDapdgHJFiRpWKQOyZG0lIoHEfXZl5VD
 
-Then enter the following javascript code in your script:
+Then enter the following javascript code into your script:
 ```javascript
 spreadsheetsJson = []
 
