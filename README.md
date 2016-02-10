@@ -36,7 +36,9 @@ Cell names are generated according to the following logic:
 Be careful that this never returns an empty string or the cell will not be monitored.
 
 The best way to understand this is via examples.
+
 Methods
+-------------
 
 ```javascript
 TrackData.runDiffCheck(jsonConfig, dataSheetOnly)
@@ -75,6 +77,7 @@ jsonConfig – Mandatory. The JSON configuration for a single spreadsheet object
 
 
 JSON Spreadsheet Configuration Tables
+-------------
 
 Spreadsheet Object:
 
