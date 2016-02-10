@@ -1,4 +1,4 @@
-# Gspread-Data-Tracker
+# Google-Sheets-Data-Tracker
 Track changes in source data over time in Google Spreadsheets, for example the output of the importHtml command.
 
 There is no GUI interface. Configuration is done through JSON configuration. Open the script editor in Google Spreadsheets, and load the Gspread-Data-Tracker library:
@@ -19,7 +19,7 @@ Then create a trigger to run the track() function repeatedly, as often as requir
 
 ##How Gspread-Data-Tracker works##
 
-Coming...
+The input into the tracker is json, which configures which data to track and how to look for patterns in that data so that the correct cells are compared even if the format change.
 
 ##Understanding Cell Names##
 In addition to the value a cell contains, each cell will be allocated a name. This has two purposes:  
