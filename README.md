@@ -37,6 +37,9 @@ Be careful that this never returns an empty string or the cell will not be monit
 
 The best way to understand this is via examples.
 
+Examples
+-------------
+
 Methods
 -------------
 
