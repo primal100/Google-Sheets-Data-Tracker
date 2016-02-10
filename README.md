@@ -49,21 +49,18 @@ Methods
 ```javascript
 TrackData.runDiffCheck(jsonConfig, dataSheetOnly)
 ```
-Run the data comparison. 
+Run the data comparison
 
-Arguments:
-
-jsonConfig – Mandatory. The JSON configuration which should contain an array of Spreadsheet objects.
-
+Arguments:  
+jsonConfig – Mandatory. The JSON configuration which should contain an array of Spreadsheet objects.  
 dataSheetOnly – Optional. If set to true, only the data sheet containing the data sources will be created and then the script will stop. This is useful for early setup to check what the data source table looks like. Default is false.
 
 ```javascript
 TrackData.getHistorySheet(jsonConfig)
 ```
-Returns the spreadsheet containing a history of all changes to the data.
+Returns the spreadsheet containing a history of all changes to the data
 
-Arguments:
-
+Arguments:  
 jsonConfig – Mandatory. The JSON configuration for a single spreadsheet object, e.g. spreadsheetsJSON[0].
 
 ```javascript
@@ -71,8 +68,7 @@ TrackData.getDiffSheet(jsonConfig)
 ```
 Returns the spreadsheet containing the changes to data over time.
 
-Arguments:
-
+Arguments:  
 jsonConfig – Mandatory. The JSON configuration for a single spreadsheet object, e.g. spreadsheetsJSON[0].
 
 ```javascript
@@ -80,8 +76,7 @@ TrackData.getDataSheet(jsonConfig)
 ```
 Returns the spreadsheet containing the latest data.
 
-Arguments:
-
+Arguments:  
 jsonConfig – Mandatory. The JSON configuration for a single spreadsheet object, e.g. spreadsheetsJSON[0].
 
 ```javascript
@@ -89,10 +84,8 @@ TrackData.filterRow(jsonConfig, row)
 ```
 Filter the difference sheet to only show columns for times where a cell’s value changed. 
 
-Arguments:
-
+Arguments:  
 jsonConfig – Mandatory. The JSON configuration for a single spreadsheet object, e.g. spreadsheetsJSON[0].
-
 row -  Mandatory. The number for the row containing the list of changes for the cell which is being filtered for.
 
 ```javascript
@@ -100,6 +93,7 @@ TrackData.showAll(jsonConfig)
 ```
 Show all columns in a spreadsheet (undo filterRow method).
 
+Arguments:  
 jsonConfig – Mandatory. The JSON configuration for a single spreadsheet object, e.g. spreadsheetsJSON[0].
 
 JSON Spreadsheet Configuration Tables
