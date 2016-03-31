@@ -45,7 +45,41 @@ The best way to understand this is via examples.
 
 Examples
 -------------
-Examples for spreadsheetJson coming...
+Examples to track changes in the English Premier League table using a Wikipedia table as source data
+
+```javascript
+spreadsheetsJSON = [
+  {
+    'name': 'Premier League Table',                                       #Used to generate sheet names
+    'id': '1bqrA2tYlvN0DO5G6lVF1T0ldAuP6ykP-qfHatbx_fmc',                 #Id of spreadsheet
+    'exclude_rows': [0],                                                  #Exclude header row
+    'exclude_columns': [1, 10],                                           #Exclude header column(team names) and another text column
+    'sources': [      #Formula includes TrackData.queryString which makes sure data is downloaded again every time script is run
+      {
+        'formula': '=IMPORTHTML("https://en.wikipedia.org/wiki/2015-16_Premier_League?' + TrackData.queryString + '", "table", 5)',
+        'critical': true
+      }
+      ],
+    'name_sources': [
+      {
+        'method': 1,              #Column Header
+        'header': 2,              #Use Column 2 as header(team names)
+      },
+      {
+        'method': 2               #Row Header (Pos, pts, etc, used Row 1 by default)
+      }
+      ]
+  }
+]
+
+function track() {
+  TrackData.runDiffCheck(spreadsheetsJSON, false)
+}
+```
+
+And here is the output with a trigger setup to run every 2 hours:
+
+https://docs.google.com/spreadsheets/d/1bqrA2tYlvN0DO5G6lVF1T0ldAuP6ykP-qfHatbx_fmc/pubhtml
 
 Methods
 -------------
