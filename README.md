@@ -8,7 +8,7 @@ MlDapdgHJFiRpWKQOyZG0lIoHEfXZl5VD
 
 Then enter the following javascript code into your script:
 ```javascript
-spreadsheetsJson = []
+spreadsheetsJSON = []
 
 function track() {
   TrackData.runDiffCheck(spreadsheetsJSON, false)
