@@ -36,7 +36,7 @@ spreadsheetsJSON = [
     'id': '1bqrA2tYlvN0DO5G6lVF1T0ldAuP6ykP-qfHatbx_fmc',                 #Id of spreadsheet
     'exclude_rows': [0],                                                  #Exclude header row from being tracked for changes
     'exclude_columns': [1, 10],                                           #Exclude header column(team names) and another text column
-    'sources': [      #Formula includes TrackData.queryString which makes sure data is downloaded again every time script is run
+    'sources': [      #Formula includes TrackData.queryString which makes sure data is refreshed every time script is run
       {
         'formula': '=IMPORTHTML("https://en.wikipedia.org/wiki/2015-16_Premier_League?' + TrackData.queryString + '", "table", 5)',
         'critical': true
