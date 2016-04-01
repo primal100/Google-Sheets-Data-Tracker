@@ -48,7 +48,7 @@ spreadsheetsJSON = [
         'header': 2,              #Use Column 2 as header(team names)
       },
       {
-        'method': 2               #Row Header (Pos, pts, etc, used Row 1 by default)
+        'method': 2               #Row Header (Pos, pts, etc, uses Row 1 by default)
       }
       ]
   }
