@@ -2,7 +2,7 @@ var queryString = Math.random();
   
 function applyStripReplacesToArray(stringArray, stripReplaces){
   var newStringArray = [];
-    for ( var i in stringArray){  a
+    for ( var i in stringArray){  
        stringArray[i] = applyStripReplaces(stringArray[i], stripReplaces)   
     }
   return stringArray;
@@ -111,7 +111,7 @@ function DataTracker(config){
         case 1:
           var column = name_source.header -1 || 0;
           var headerSize = this.dataRange.getRow() - 1;
-          var headerValues = Objects1da.getColumn(this.dataSheet, headerSize, column + 1).getValues();
+          var headerValues = Objects1d.getColumn(this.dataSheet, headerSize, column + 1).getValues();
           names = this.getNamesByHeader(headerValues, names, false, stripReplaces);
           break;
         case 2:
@@ -472,7 +472,7 @@ function DataTracker(config){
   this.updateChanges = function(){
     Logger.info('Updating data on diff sheet');
     this.diffSheetNames = this.cellNamesCol.values;
-    var cellNames = Objects1d.to1d(this.latestCellNames);
+    var cellNames = sheetsextra.to1d(this.latestCellNames);
     for ( row=1; row <= this.diffSheetNames.length - 1; row++ ){
        var name = this.diffSheetNames[row];
        if (name){
