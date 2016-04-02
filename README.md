@@ -206,4 +206,9 @@ JSON Spreadsheet Configuration Tables
 Common Issues  
 1. “Range is invalid” – make sure firstrun is set to true.
 
+The source code depends on two libraries:
+
+Sheetsextra: MBMqhMPNTAcCr_ppXue1xbWEdFEUJsEaZ
+Objects1d: 	MS8m0Cjb7P7PEESdMy2qrTYoHEfXZl5VD
+
 
