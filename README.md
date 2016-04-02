@@ -208,8 +208,8 @@ Common Issues
 
 The source code depends on two libraries:
 
-Sheetsextra: MBMqhMPNTAcCr_ppXue1xbWEdFEUJsEaZ
+Sheetsextra: MBMqhMPNTAcCr_ppXue1xbWEdFEUJsEaZ (https://github.com/primal100/sheetsextra)
 
-Objects1d: 	MS8m0Cjb7P7PEESdMy2qrTYoHEfXZl5VD
+Objects1d: 	MS8m0Cjb7P7PEESdMy2qrTYoHEfXZl5VD (https://github.com/primal100/Gspread-Objects1d)
 
 
